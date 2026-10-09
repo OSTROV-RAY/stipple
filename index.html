@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Stipple — все точечные вариации email</title>
-<meta name="description" content="Stipple генерирует все возможные вариации email-адреса с точками в локальной части. Локально в браузере, с отметками «использовано»." />
+<title>Stipple — all dot variations of email</title>
+<meta name="description" content="Stipple generates all possible email variations with dots in the local part. Runs locally in the browser, with 'used' marks." />
 <meta name="theme-color" content="#171717" />
 <meta property="og:title" content="Stipple — email dot variations" />
-<meta property="og:description" content="Все возможные точечные вариации одного email-адреса. Локально, без серверов." />
+<meta property="og:description" content="All possible dot variations of a single email address. Local, without servers." />
 <meta property="og:type" content="website" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171717'/%3E%3Ccircle cx='9' cy='16' r='2.4' fill='%23ffffff'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%23ffffff'/%3E%3Ccircle cx='23' cy='16' r='2.4' fill='%23ffffff'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -394,40 +394,40 @@
 </header>
 
 <main>
-  <h1>Stipple — все точечные вариации одного адреса.</h1>
-  <p class="lede">Введи email — получи все возможные перестановки точки в локальной части (до <code>@</code>). Жми <strong>Use</strong>, чтобы пометить адрес как использованный — отметки сохраняются в браузере.</p>
+  <h1>Stipple — all dot variations of one address.</h1>
+  <p class="lede">Enter an email — get all possible dot permutations in the local part (before <code>@</code>). Click <strong>Use</strong> to mark an address as used — marks are saved in the browser.</p>
 
   <div class="form-card">
     <div class="input-row">
       <input id="email" class="input" type="email" placeholder="example@mail.com" autocomplete="off" spellcheck="false" />
-      <button id="generateBtn" class="cta">Сгенерировать <span aria-hidden>→</span></button>
+      <button id="generateBtn" class="cta">Generate <span aria-hidden>→</span></button>
     </div>
   </div>
 
   <div class="stats">
-    <div class="stat"><span class="label">Всего</span><span class="value" id="statTotal">—</span></div>
-    <div class="stat used"><span class="label">Использовано</span><span class="value" id="statUsed">—</span></div>
-    <div class="stat"><span class="label">Свободно</span><span class="value" id="statFree">—</span></div>
-    <div class="stat"><span class="label">Длина</span><span class="value mono" id="statLen">—</span></div>
-    <div class="stat"><span class="label">Домен</span><span class="value mono" id="statDomain" style="font-size:13px">—</span></div>
+    <div class="stat"><span class="label">Total</span><span class="value" id="statTotal">—</span></div>
+    <div class="stat used"><span class="label">Used</span><span class="value" id="statUsed">—</span></div>
+    <div class="stat"><span class="label">Free</span><span class="value" id="statFree">—</span></div>
+    <div class="stat"><span class="label">Length</span><span class="value mono" id="statLen">—</span></div>
+    <div class="stat"><span class="label">Domain</span><span class="value mono" id="statDomain" style="font-size:13px">—</span></div>
   </div>
 
   <div class="toolbar">
-    <div class="pill-group" role="tablist" aria-label="Фильтр">
-      <button class="pill-toggle active" data-filter="all">Все <span class="count" id="cAll">0</span></button>
-      <button class="pill-toggle" data-filter="unused">Свободные <span class="count" id="cUnused">0</span></button>
-      <button class="pill-toggle" data-filter="used">Использованные <span class="count" id="cUsed">0</span></button>
+    <div class="pill-group" role="tablist" aria-label="Filter">
+      <button class="pill-toggle active" data-filter="all">All <span class="count" id="cAll">0</span></button>
+      <button class="pill-toggle" data-filter="unused">Unused <span class="count" id="cUnused">0</span></button>
+      <button class="pill-toggle" data-filter="used">Used <span class="count" id="cUsed">0</span></button>
     </div>
     <div class="spacer"></div>
-    <button id="copyAllBtn" class="ghost" type="button" title="Скопировать видимые в фильтре адреса">Копировать список</button>
-    <button id="downloadBtn" class="ghost" type="button" title="Скачать список .txt">Скачать .txt</button>
-    <button id="clearMarksBtn" class="ghost danger" type="button" title="Удалить все отметки об использовании">Очистить отметки</button>
+    <button id="copyAllBtn" class="ghost" type="button" title="Copy addresses visible in the filter">Copy list</button>
+    <button id="downloadBtn" class="ghost" type="button" title="Download list as .txt">Download .txt</button>
+    <button id="clearMarksBtn" class="ghost danger" type="button" title="Remove all used marks">Clear marks</button>
   </div>
 
   <div class="results" id="results">
     <div class="empty">
-      <div class="empty-mono">пусто</div>
-      <div style="margin-top:8px">Введите адрес и нажмите «Сгенерировать»</div>
+      <div class="empty-mono">empty</div>
+      <div style="margin-top:8px">Enter an address and press “Generate”</div>
     </div>
   </div>
   <div class="results-footer" id="resultsFooter" hidden>
@@ -436,12 +436,12 @@
   </div>
 
   <footer class="page-footer">
-    <span>Stipple · работает локально, без серверов</span>
+    <span>Stipple · works locally, without servers</span>
     <span><a id="repoLink2" href="#" target="_blank" rel="noopener noreferrer" hidden>source on github →</a></span>
   </footer>
 </main>
 
-<div class="toast" id="toast">Скопировано</div>
+<div class="toast" id="toast">Copied</div>
 
 <script>
 (() => {
@@ -505,7 +505,7 @@
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify([...usedSet]));
     } catch (e) {
-      showToast('Ошибка сохранения в localStorage');
+    showToast('Failed to save to localStorage');
     }
   }
 
@@ -517,7 +517,7 @@
   }
 
   function fmt(n) {
-    return n.toLocaleString('ru-RU').replace(/\u00A0/g, ' ');
+  return n.toLocaleString('en-US').replace(/\u00A0/g, ' ');
   }
 
   function parseEmail(raw) {
@@ -561,8 +561,8 @@
     if (list.length === 0) {
       resultsEl.innerHTML = `
         <div class="empty">
-          <div class="empty-mono">пусто</div>
-          <div style="margin-top:8px">Введите адрес и нажмите «Сгенерировать»</div>
+          <div class="empty-mono">empty</div>
+          <div style="margin-top:8px">Enter an address and press “Generate”</div>
         </div>`;
       resultsFooter.hidden = true;
       return;
@@ -578,8 +578,8 @@
     if (filtered.length === 0) {
       resultsEl.innerHTML = `
         <div class="empty">
-          <div class="empty-mono">фильтр пуст</div>
-          <div style="margin-top:8px">Нет адресов в этой категории</div>
+          <div class="empty-mono">filter empty</div>
+          <div style="margin-top:8px">No addresses in this category</div>
         </div>`;
       resultsFooter.hidden = true;
       return;
@@ -612,7 +612,7 @@
     resultsEl.innerHTML = html;
     resultsFooter.hidden = false;
 
-    footerMeta.textContent = `показано ${fmt(start + 1)}–${fmt(end)} из ${fmt(filtered.length)} (${state.filter})`;
+    footerMeta.textContent = `showing ${fmt(start + 1)}–${fmt(end)} of ${fmt(filtered.length)} (${state.filter})`;
 
     pagerEl.innerHTML = `
       <button id="prevBtn" ${state.page === 0 ? 'disabled' : ''}>← prev</button>
@@ -655,18 +655,18 @@
   function generate() {
     const parsed = parseEmail(emailInput.value);
     if (!parsed) {
-      showToast('Неверный формат email');
+      showToast('Invalid email format');
       return;
     }
     const cleanLocal = parsed.local.replace(/\./g, '');
     if (cleanLocal.length === 0) {
-      showToast('Локальная часть пустая');
+      showToast('Local part is empty');
       return;
     }
     const slots = Math.max(0, cleanLocal.length - 1);
     const total = 1 << slots;
     if (total > 200000) {
-      if (!confirm(`Длина "${cleanLocal}" даёт ${fmt(total)} вариаций. Это может подвесить браузер. Продолжить?`)) {
+      if (!confirm(`The length "${cleanLocal}" produces ${fmt(total)} variations. This may freeze the browser. Continue?`)) {
         return;
       }
     }
@@ -714,10 +714,10 @@
       const email = markBtn.dataset.mark;
       if (usedSet.has(email)) {
         usedSet.delete(email);
-        showToast('Снята отметка: ' + email);
+        showToast('Mark removed: ' + email);
       } else {
         usedSet.add(email);
-        showToast('Помечено: ' + email);
+        showToast('Marked: ' + email);
       }
       saveUsed();
       updateStats();
@@ -730,7 +730,7 @@
       copyText(email).then(() => {
         copyBtn.textContent = 'Copied';
         copyBtn.classList.add('copied');
-        showToast('Скопировано: ' + email);
+        showToast('Copied: ' + email);
         setTimeout(() => { copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 1100);
       });
       return;
@@ -740,21 +740,21 @@
       const row = emailSpan.closest('.row');
       const email = row && row.dataset.email;
       if (email) {
-        copyText(email).then(() => showToast('Скопировано: ' + email));
+        copyText(email).then(() => showToast('Copied: ' + email));
       }
     }
   });
 
   copyAllBtn.addEventListener('click', () => {
     const filtered = getFiltered();
-    if (filtered.length === 0) { showToast('Нет адресов для копирования'); return; }
+    if (filtered.length === 0) { showToast('No addresses to copy'); return; }
     const text = filtered.map(l => `${l}@${state.domain}`).join('\n');
-    copyText(text).then(() => showToast(`Скопировано ${fmt(filtered.length)} адресов`));
+    copyText(text).then(() => showToast(`Copied ${fmt(filtered.length)} addresses`));
   });
 
   downloadBtn.addEventListener('click', () => {
     const filtered = getFiltered();
-    if (filtered.length === 0) { showToast('Нет адресов для скачивания'); return; }
+    if (filtered.length === 0) { showToast('No addresses to download'); return; }
     const text = filtered.map(l => `${l}@${state.domain}`).join('\n');
     const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
@@ -763,17 +763,17 @@
     a.href = url; a.download = `stipple_${safe}.txt`;
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    showToast(`Скачано ${fmt(filtered.length)} адресов`);
+    showToast(`Downloaded ${fmt(filtered.length)} addresses`);
   });
 
   clearMarksBtn.addEventListener('click', () => {
-    if (usedSet.size === 0) { showToast('Отметок нет'); return; }
-    if (!confirm(`Удалить все отметки (${fmt(usedSet.size)} шт.)? Это нельзя отменить.`)) return;
+    if (usedSet.size === 0) { showToast('No marks'); return; }
+    if (!confirm(`Clear all marks (${fmt(usedSet.size)} items)? This cannot be undone.`)) return;
     usedSet.clear();
     saveUsed();
     updateStats();
     renderRows();
-    showToast('Отметки очищены');
+    showToast('Marks cleared');
   });
 
   // On load: restore last entered email (if any) and regenerate; otherwise just focus the input
